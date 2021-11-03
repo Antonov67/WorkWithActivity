@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+    //метод для получения новых данных, замена метода startActivityForResult
     ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
                 @Override
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Нет-нет",Toast.LENGTH_LONG).show();
 
     }
-
+    //новый метод забрать данный из второй Активити
     public void getDataNewMetod(View view) {
         mStartForResult.launch(new Intent(this, MainActivity4.class));
     }
